@@ -2,7 +2,10 @@ resource "aws_eip" "nat_gateway" {
   for_each = toset(local.nat_gateway_availability_zones)
 
   tags = {
-    Name = "${var.label}-nat-gateway-${each.key}"
+    Name = (length(local.nat_gateway_availability_zones) > 1
+      ? "${var.label}-nat-gateway-${each.key}"
+      : "${var.label}-nat-gateway"
+    )
   }
 }
 

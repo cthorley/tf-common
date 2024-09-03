@@ -4,7 +4,6 @@ resource "aws_route_table" "private" {
   vpc_id = aws_vpc.this.id
 
   tags = {
-    //Name = "${var.label}-private${length(local.nat_gateway_availability_zones) > 1 ? "-${each.key}" : ""}"
     Name = (length(local.nat_gateway_availability_zones) > 1
       ? "${var.label}-private-${each.key}"
       : "${var.label}-private"

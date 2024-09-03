@@ -2,7 +2,7 @@
 A minimal IPv4 VPC solution
 
 ## Usage
-This module captures (perhaps) the most common basic networking pattern for AWS VPCs.  It does not attempt to provide a network address schema of any kind.
+This module captures (perhaps) the most common basic networking pattern for AWS VPCs.  No attempt is made to provide a network address schema of any kind.
 
 Module callers must define the following variables:
 
